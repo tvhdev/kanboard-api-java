@@ -1,0 +1,17 @@
+@startuml
+class KanboardServiceFooDefault
+note left: Java API level
+
+class KanboardServiceFooNative
+note left: PHP call level
+
+class KanboardServiceFoo
+note left: service level
+
+class KanboardService
+note left: user level
+
+KanboardServiceFooDefault --> "1" KanboardServiceFooNative
+KanboardServiceFooNative --> "1" KanboardServiceFoo
+KanboardServiceFoo "many" *-- "1" KanboardService
+@enduml

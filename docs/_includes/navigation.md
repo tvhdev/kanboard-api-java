@@ -1,0 +1,2 @@
+{% if page.type != "project" %} {{site.t[page.lang].pageItemSeperator}} [Project](/kanboard-api-java/#){% endif %} {% if page.type != "development" %} {{site.t[page.lang].pageItemSeperator}} [Development](/kanboard-api-java/development/#){% endif %} {% if page.type != "structure" %} {{site.t[page.lang].pageItemSeperator}} [Structure](/kanboard-api-java/structure/#}}){% endif %} {% if page.type != "author" %} {{site.t[page.lang].pageItemSeperator}} [Author](/kanboard-api-java/author/#){% endif %}
+ {{site.t[page.lang].pageItemSeperator}}
