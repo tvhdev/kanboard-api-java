@@ -8,26 +8,35 @@ permalink: /development/
 
 {% include navigation.md %}
 
-## Getting started
+## Quick start
 
-Install [Docker](https://www.docker.com/) and open a Unix Shell or Docker Quickstart Terminal.
+Make sure you have a working [Docker](https://docs.docker.com/engine/installation/) and
+[docker-compose](https://docs.docker.com/compose/install/) environment.
 
 ```bash
-# start a pull-request and change into the docker folder
-cd docker
+# download
+git clone https://github.com/phoen1x/kanboard-api-java.git
+cd kanboard-api-java
 
-# Change the constant PROFILE in the class KanboardConstant to PROFILE_DEVELOPMENT
-find ../project -name 'KanboardConstant.java' -exec sed -i 's|PROFILE = PROFILE_BUILD|PROFILE = PROFILE_DEVELOPMENT|' {}  ";"
+# start project
+docker-compose up -d
 
-# start development container
-./containerStart.sh
+# run integration tests
+docker-compose exec maven ./mvnw -Dtest=Kanboard\*\*IntegrationTest test
+
+# build jar file to project/target/kanboard-api-java.jar
+docker-compose exec maven ./mvnw clean package
+
+# show build results integration test - login admin:admin
+xdg-open http://172.19.1.1:81/
+
+# stop project
+docker-compose down
 ```
 
-## Only for Windows users
-
-You will probably run into a bug, that you can't execute the .sh files. Please make sure to use the **dos2unix** command once to change the .sh files into the unix format.
+## Maven (build only)
 
 ```bash
-cd docker
-find . -name '*.sh' -type f -exec dos2unix {} ";"
+cd project
+./mvnw clean package
 ```

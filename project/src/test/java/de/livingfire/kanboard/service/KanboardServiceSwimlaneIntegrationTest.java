@@ -9,7 +9,6 @@ import static org.hamcrest.Matchers.nullValue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.List;
 import java.util.UUID;
@@ -30,13 +29,7 @@ public class KanboardServiceSwimlaneIntegrationTest implements KanboardConstant 
     public void setUp() throws UnknownHostException {
         KanboardApi kanboardApi = mock(KanboardApi.class);
         when(kanboardApi.getApiVersion()).thenReturn("2.0");
-        if ("maven".equals(InetAddress.getLocalHost()
-                                      .getHostName())) {
-            when(kanboardApi.getApiUrl()).thenReturn("http://kanboard/jsonrpc.php");
-        } else {
-            System.out.println("--- CONFIGURATION: DEVELOPMENT");
-            when(kanboardApi.getApiUrl()).thenReturn("http://127.0.0.1/jsonrpc.php");
-        }
+        when(kanboardApi.getApiUrl()).thenReturn("http://kanboard/jsonrpc.php");
         when(kanboardApi.getApiUser()).thenReturn("jsonrpc");
         when(kanboardApi.getApiAuthToken()).thenReturn("19ffd9709d03ce50675c3a43d1c49c1ac207f4bc45f06c5b2701fbdf8929");
         when(kanboardApi.getApiHeader()).thenReturn("X-API-Auth");

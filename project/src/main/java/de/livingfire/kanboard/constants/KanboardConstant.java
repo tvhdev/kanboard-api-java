@@ -2,10 +2,6 @@ package de.livingfire.kanboard.constants;
 
 public interface KanboardConstant {
 
-    public static final String PROFILE_DEVELOPMENT = "development";
-    public static final String PROFILE_BUILD = "build";
-    public static final String PROFILE = PROFILE_BUILD;
-
     public static final boolean SHOW_HTTP_REQUESTS = false;
 
     public static final String KANBOARD_USER_DEFAULT = "admin";
