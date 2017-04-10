@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+
+    kanboard:
+        build: docker/kanboard
+        ports:
+            - "$NETWORK_KANBOARD_GATEWAY:$PORT_00081_KANBOARD"
+
+    maven:
+        build: docker/maven
+        volumes:
+            - $PWD/docker/_volumes/maven_m2:/root/.m2
+            - $PWD/project:/project
+
+networks:
+    default:
+        driver: bridge
+        driver_opts:
+            com.docker.network.enable_ipv6: "false"
+            com.docker.network.bridge.name: "$NETWORK_KANBOARD_BRIDGE"
+        ipam:
+            driver: default
+            config:
+                - subnet: "$NETWORK_KANBOARD_SUBNET"
