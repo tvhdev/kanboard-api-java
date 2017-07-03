@@ -5,7 +5,7 @@ services:
     jekyll:
         image: jekyll/jekyll
         ports:
-            - "$NETWORK_JEKYLL_GATEWAY:$PORT_00081_JEKYLL:4000"
+            - "$NETWORK_JEKYLL_GATEWAY:$PORT_00080_JEKYLL:4000"
 #        command: "jekyll --help"
 #        command: "jekyll new /srv/jekyll/new"
         command: "jekyll serve --source /srv/jekyll"

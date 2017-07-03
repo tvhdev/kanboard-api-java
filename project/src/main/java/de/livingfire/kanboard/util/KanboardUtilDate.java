@@ -9,18 +9,22 @@ import de.livingfire.kanboard.exception.KanboardException;
 
 public class KanboardUtilDate {
 
-    public static final String FORMAT_KANBOARD = "yyyy-MM-dd";
+    public static final String FORMAT_KANBOARD_DATE = "yyyy-MM-dd";
+    public static final String FORMAT_KANBOARD_DATETIME = "yyyy-MM-dd HH:mm";
     public static final String FORMAT_DEBUG = "yyyy-MM-dd HH:mm:ss.SSS Z z";
 
-    private final SimpleDateFormat kanboardFormat;
+    private final SimpleDateFormat kanboardDateFormat;
+    private final SimpleDateFormat kanboardDateTimeFormat;
 
     private final TimeZone timeZone;
 
     public KanboardUtilDate(TimeZone timeZone) {
         super();
         this.timeZone = timeZone;
-        this.kanboardFormat = new SimpleDateFormat(FORMAT_KANBOARD);
-        this.kanboardFormat.setTimeZone(timeZone);
+        this.kanboardDateFormat = new SimpleDateFormat(FORMAT_KANBOARD_DATE);
+        this.kanboardDateFormat.setTimeZone(timeZone);
+        this.kanboardDateTimeFormat = new SimpleDateFormat(FORMAT_KANBOARD_DATETIME);
+        this.kanboardDateTimeFormat.setTimeZone(timeZone);
     }
 
     public KanboardUtilDate(String timeZone) {
@@ -31,8 +35,12 @@ public class KanboardUtilDate {
         return this.timeZone;
     }
 
+    public String convertToDateTimeKanboard(Date date) {
+        return this.kanboardDateTimeFormat.format(date);
+    }
+
     public String convertToDateKanboard(Date date) {
-        return this.kanboardFormat.format(date);
+        return this.kanboardDateFormat.format(date);
     }
 
     public Date convertToDateJava(String date) {
@@ -51,4 +59,5 @@ public class KanboardUtilDate {
         format.setTimeZone(this.timeZone);
         return format;
     }
+
 }

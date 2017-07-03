@@ -3,15 +3,19 @@ version: '3'
 services:
 
     kanboard:
-        build: docker/kanboard
+        image: kanboard/kanboard:v1.0.45
         ports:
-            - "$NETWORK_KANBOARD_GATEWAY:$PORT_00081_KANBOARD"
+            - "$NETWORK_KANBOARD_GATEWAY:$PORT_00080_KANBOARD"
+        volumes:
+            - "$VOLUME_KANBOARD_CONFIG"
 
     maven:
-        build: docker/maven
+        image: openjdk:8-jdk
+        command: bash -c 'touch /test && tail -f /test'
+        working_dir: /project
         volumes:
-            - $PWD/docker/_volumes/maven_m2:/root/.m2
-            - $PWD/project:/project
+            - "$VOLUME_MAVEN_M2"
+            - "$VOLUME_MAVEN_PROJECT"
 
 networks:
     default:
