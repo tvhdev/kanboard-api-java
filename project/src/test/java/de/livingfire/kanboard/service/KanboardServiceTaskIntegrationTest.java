@@ -28,13 +28,14 @@ import org.junit.Before;
 import org.junit.Test;
 
 import de.livingfire.kanboard.configuration.KanboardApi;
+import de.livingfire.kanboard.constants.IntegrationTestConstant;
 import de.livingfire.kanboard.constants.KanboardConstant;
 import de.livingfire.kanboard.domain.KanboardProject;
 import de.livingfire.kanboard.domain.KanboardSwimlane;
 import de.livingfire.kanboard.domain.KanboardTask;
 import de.livingfire.kanboard.exception.KanboardException;
 
-public class KanboardServiceTaskIntegrationTest implements KanboardConstant {
+public class KanboardServiceTaskIntegrationTest implements KanboardConstant, IntegrationTestConstant {
 
     private KanboardService service;
     private SimpleDateFormat dateFormatOffset;
@@ -42,8 +43,8 @@ public class KanboardServiceTaskIntegrationTest implements KanboardConstant {
     @Before
     public void setUp() throws UnknownHostException {
         KanboardApi kanboardApi = mock(KanboardApi.class);
-        when(kanboardApi.getApiVersion()).thenReturn("2.0");
-        when(kanboardApi.getApiUrl()).thenReturn("http://172.19.1.1:81/jsonrpc.php");
+        when(kanboardApi.getApiVersion()).thenReturn(REQUEST_JSONRPC_DEFAULT);
+        when(kanboardApi.getApiUrl()).thenReturn(INTEGRATION_TEST_URL);
         when(kanboardApi.getApiUser()).thenReturn("jsonrpc");
         when(kanboardApi.getApiAuthToken()).thenReturn("19ffd9709d03ce50675c3a43d1c49c1ac207f4bc45f06c5b2701fbdf8929");
         when(kanboardApi.getApiHeader()).thenReturn("X-API-Auth");
@@ -433,10 +434,14 @@ public class KanboardServiceTaskIntegrationTest implements KanboardConstant {
         calendar.set(Calendar.DAY_OF_MONTH, 1);
         calendar.set(Calendar.MONDAY, 3);
         calendar.set(Calendar.YEAR, 2016);
+        calendar.set(Calendar.MILLISECOND, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
 
         KanboardTask taskExpected = new KanboardTask(projectCreated.getId(), "1");
         taskExpected.setDateDue(this.service.date()
-                                            .convertToDateKanboard(calendar.getTime()));
+                                            .convertToDateTimeKanboard(calendar.getTime()));
 
         this.service.task()
                     .create(taskExpected);

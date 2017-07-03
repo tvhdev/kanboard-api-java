@@ -1,11 +1,11 @@
-kanbaord-api:
-    api-url: http://172.19.1.1:81/jsonrpc.php
-    api-auth-token: 19ffd9709d03ce50675c3a43d1c49c1ac207f4bc45f06c5b2701fbdf8929
-    api-header: X-API-Auth
-    api-version: 2.0
-    api-user: jsonrpc
+kanboardApi:
+    apiUrl: http://172.19.1.1/jsonrpc.php
+    apiAuthToken: 19ffd9709d03ce50675c3a43d1c49c1ac207f4bc45f06c5b2701fbdf8929
+    apiHeader: X-API-Auth
+    apiVersion: 2.0
+    apiUser: jsonrpc
 
-kanbaord-setup:
+kanboardSetup:
     user:
         username: skylar
         password: skylar
@@ -39,22 +39,22 @@ kanbaord-setup:
               position: 3
           tasks:
             - title: eggs
-              recurrence-trigger: 1
-              recurrence-status: 1
+              recurrenceTrigger: 1
+              recurrenceStatus: 1
             - title: milk
-              recurrence-trigger: 1
-              recurrence-status: 1
+              recurrenceTrigger: 1
+              recurrenceStatus: 1
             - title: sugar
-              recurrence-trigger: 1
-              recurrence-status: 1
+              recurrenceTrigger: 1
+              recurrenceStatus: 1
             - title: coffee
-              recurrence-trigger: 1
-              recurrence-status: 1
+              recurrenceTrigger: 1
+              recurrenceStatus: 1
             - title: salt
-              recurrence-trigger: 1
-              recurrence-status: 1
+              recurrenceTrigger: 1
+              recurrenceStatus: 1
           actions:
-            - event-name: task.move.column
-              action-name: \Kanboard\Action\TaskCloseColumn
+            - event_name: task.move.column
+              action_name: \Kanboard\Action\TaskCloseColumn
               params:
                 column_id: complete

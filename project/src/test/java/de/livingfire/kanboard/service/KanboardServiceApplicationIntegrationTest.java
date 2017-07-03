@@ -14,18 +14,19 @@ import org.junit.Before;
 import org.junit.Test;
 
 import de.livingfire.kanboard.configuration.KanboardApi;
+import de.livingfire.kanboard.constants.IntegrationTestConstant;
 import de.livingfire.kanboard.constants.KanboardConstant;
 import de.livingfire.kanboard.util.KanboardUtilDate;
 
-public class KanboardServiceApplicationIntegrationTest {
+public class KanboardServiceApplicationIntegrationTest implements KanboardConstant, IntegrationTestConstant {
 
     private KanboardService service;
 
     @Before
     public void setUp() throws UnknownHostException {
         KanboardApi kanboardApi = mock(KanboardApi.class);
-        when(kanboardApi.getApiVersion()).thenReturn("2.0");
-        when(kanboardApi.getApiUrl()).thenReturn("http://172.19.1.1:81/jsonrpc.php");
+        when(kanboardApi.getApiVersion()).thenReturn(REQUEST_JSONRPC_DEFAULT);
+        when(kanboardApi.getApiUrl()).thenReturn(INTEGRATION_TEST_URL);
         when(kanboardApi.getApiUser()).thenReturn("jsonrpc");
         when(kanboardApi.getApiAuthToken()).thenReturn("19ffd9709d03ce50675c3a43d1c49c1ac207f4bc45f06c5b2701fbdf8929");
         when(kanboardApi.getApiHeader()).thenReturn("X-API-Auth");

@@ -1,0 +1,60 @@
+kanboardApi:
+    apiUrl: http://172.19.1.1/jsonrpc.php
+    apiAuthToken: 19ffd9709d03ce50675c3a43d1c49c1ac207f4bc45f06c5b2701fbdf8929
+    apiHeader: X-API-Auth
+    apiVersion: 2.0
+    apiUser: jsonrpc
+
+kanboardSetup:
+    user:
+        username: skylar
+        password: skylar
+        email: change.me@livingfire.local
+        role: app-admin
+    projects:
+        - name: skylar
+          description: skylar default project
+          identifier: skylar
+          swimlanes:
+            - name: alert
+            - name: todo
+          columns:
+            - title: backlog
+              position: 1
+            - title: new
+              position: 2
+            - title: in progress
+              position: 3
+            - title: complete
+              position: 4
+        - name: shopping
+          description: skylar shopping
+          identifier: shopping
+          columns:
+            - title: backlog
+              position: 1
+            - title: in progress
+              position: 2
+            - title: complete
+              position: 3
+          tasks:
+            - title: eggs
+              recurrenceTrigger: 1
+              recurrenceStatus: 1
+            - title: milk
+              recurrenceTrigger: 1
+              recurrenceStatus: 1
+            - title: sugar
+              recurrenceTrigger: 1
+              recurrenceStatus: 1
+            - title: coffee
+              recurrenceTrigger: 1
+              recurrenceStatus: 1
+            - title: salt
+              recurrenceTrigger: 1
+              recurrenceStatus: 1
+          actions:
+            - event_name: task.move.column
+              action_name: \Kanboard\Action\TaskCloseColumn
+              params:
+                column_id: complete

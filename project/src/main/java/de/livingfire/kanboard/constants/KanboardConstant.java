@@ -4,9 +4,6 @@ public interface KanboardConstant {
 
     public static final boolean SHOW_HTTP_REQUESTS = false;
 
-    public static final String KANBOARD_USER_DEFAULT = "admin";
-    public static final String KANBOARD_USER_DEFAULT_PASSWORD = "admin";
-
     public static final String ACTION_NAME_TASK_CLOSE_COLUMN = "\\Kanboard\\Action\\TaskCloseColumn";
 
     public static final String EVENT_NAME_TASK_MOVE_COLUMN = "task.move.column";

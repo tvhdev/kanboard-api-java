@@ -1,3 +1,4 @@
+page-prefix: /kanboard-api-java/
 theme: jekyll-theme-dinky
 t:
   en:
