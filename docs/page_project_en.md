@@ -66,7 +66,7 @@ cd kanboard-api-java/project
 
 See [KanboardSetupIntegrationTest](https://github.com/phoen1x/kanboard-api-java/tree/master/project/src/test/java/de/livingfire/kanboard/KanboardSetupIntegrationTest.java) on how to use this YAML file to setup your Kanban board.
 
-```json
+```yaml
 {% include application.yml %}
 ```
 
