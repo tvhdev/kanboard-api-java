@@ -3,7 +3,7 @@ version: '3'
 services:
 
     kanboard:
-        image: kanboard/kanboard:v1.0.47
+        image: kanboard/kanboard:v1.2.2
         ports:
             - "$NETWORK_KANBOARD_GATEWAY:$PORT_00080_KANBOARD"
         volumes:
