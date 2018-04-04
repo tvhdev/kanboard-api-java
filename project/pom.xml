@@ -4,7 +4,7 @@
 
     <groupId>de.livingfire</groupId>
     <artifactId>kanboard-api-java</artifactId>
-    <version>1.0.47</version>
+    <version>1.2.2</version>
     <packaging>jar</packaging>
 
     <name>kanboard-api-java</name>
