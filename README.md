@@ -1,6 +1,6 @@
 # kanboard-api-java
 
-Java client for the [Kanboard](https://kanboard.net/) Json-RPC [API](https://kanboard.net/documentation/api-json-rpc)
+Improved Java client for the [Kanboard](https://kanboard.net/) Json-RPC [API](https://kanboard.net/documentation/api-json-rpc) for the current version of Kanboard 1.25.X
 
 ## Usage
 
