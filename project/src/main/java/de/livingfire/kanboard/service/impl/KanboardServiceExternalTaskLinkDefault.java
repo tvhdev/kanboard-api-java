@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Map;
 
 import de.livingfire.kanboard.domain.KanboardExternalTaskLink;
-import de.livingfire.kanboard.util.KanboardUtil;
 
 public class KanboardServiceExternalTaskLinkDefault 
 extends KanboardServiceExternalTaskLinkNative {
