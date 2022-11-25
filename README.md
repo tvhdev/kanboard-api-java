@@ -1,8 +1,8 @@
 # kanboard-api-java
 
 Improved Java client for the [Kanboard](https://kanboard.net/) Json-RPC [API](https://kanboard.net/documentation/api-json-rpc) for the current version of Kanboard 1.25.X supporting:
-*Task Tags
-*... (in progress)
+* Task Tags
+* ... (in progress)
 
 ## Usage
 
