@@ -1,9 +1,12 @@
 package de.livingfire.kanboard.service;
 
 import de.livingfire.kanboard.configuration.KanboardApi;
+import de.livingfire.kanboard.domain.KanboardExternalTaskLink;
+import de.livingfire.kanboard.domain.KanboardProject;
 import de.livingfire.kanboard.service.impl.KanboardServiceActionDefault;
 import de.livingfire.kanboard.service.impl.KanboardServiceApplicationDefault;
 import de.livingfire.kanboard.service.impl.KanboardServiceColumnDefault;
+import de.livingfire.kanboard.service.impl.KanboardServiceExternalTaskLinkDefault;
 import de.livingfire.kanboard.service.impl.KanboardServiceProjectDefault;
 import de.livingfire.kanboard.service.impl.KanboardServiceSwimlaneDefault;
 import de.livingfire.kanboard.service.impl.KanboardServiceTaskDefault;
@@ -18,6 +21,7 @@ public class KanboardService {
     private KanboardServiceSwimlane serviceSwimlane;
     private KanboardServiceTask serviceTask;
     private KanboardServiceUser serviceUser;
+    private KanboardServiceExternalTaskLink serviceExternalTaskLink;
     private KanboardServiceApplication serviceApplication;
     private KanboardUtilDate utilDate;
 
@@ -30,15 +34,17 @@ public class KanboardService {
         this.serviceSwimlane = new KanboardServiceSwimlaneDefault();
         this.serviceTask = new KanboardServiceTaskDefault();
         this.serviceUser = new KanboardServiceUserDefault();
+        this.serviceExternalTaskLink = new KanboardServiceExternalTaskLinkDefault();
     }
 
-    public void setApi(KanboardApi kanboardApi) {
+	public void setApi(KanboardApi kanboardApi) {
         this.serviceAction.setKanboardApi(kanboardApi);
         this.serviceColumn.setKanboardApi(kanboardApi);
         this.serviceProject.setKanboardApi(kanboardApi);
         this.serviceSwimlane.setKanboardApi(kanboardApi);
         this.serviceTask.setKanboardApi(kanboardApi);
         this.serviceUser.setKanboardApi(kanboardApi);
+        this.serviceExternalTaskLink.setKanboardApi(kanboardApi);
         this.serviceApplication.setKanboardApi(kanboardApi);
 
         // hand down for lasy loading KanboardUtilDate
@@ -78,6 +84,10 @@ public class KanboardService {
     public KanboardServiceUser user() {
         return getServiceUser();
     }
+    
+	public KanboardServiceExternalTaskLink externalTaskLink() {
+		return getServiceExternalTaskLink();
+	}
 
     public KanboardUtilDate date() {
         if (this.utilDate == null) {
@@ -98,6 +108,14 @@ public class KanboardService {
         this.serviceApplication = serviceApplication;
     }
 
+	public KanboardServiceExternalTaskLink getServiceExternalTaskLink() {
+		return serviceExternalTaskLink;
+	}
+
+	public void setServiceExternalTaskLink(KanboardServiceExternalTaskLink serviceExternalTaskLink) {
+		this.serviceExternalTaskLink = serviceExternalTaskLink;
+	}
+	
     public KanboardServiceUser getServiceUser() {
         return this.serviceUser;
     }
@@ -145,5 +163,4 @@ public class KanboardService {
     public void setServiceSwimlane(KanboardServiceSwimlane serviceSwimlane) {
         this.serviceSwimlane = serviceSwimlane;
     }
-
 }

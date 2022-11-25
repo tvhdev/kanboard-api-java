@@ -14,6 +14,7 @@ public interface KanboardConstant {
     public static final String METHOD_ACTION_CREATE = "createAction";
     public static final String METHOD_ACTION_GET_ALL = "getActions";
     public static final String METHOD_APPLICATION_GET_TIMEZONE = "getTimezone";
+    public static final String METHOD_CREATE_EXTERNAL_TASK_LINK = "createExternalTaskLink";
     public static final String METHOD_COLUMN_ADD = "addColumn";
     public static final String METHOD_COLUMN_BY_ID = "getColumn";
     public static final String METHOD_COLUMN_CHANGE_POSITON = "changeColumnPosition";
@@ -105,6 +106,10 @@ public interface KanboardConstant {
     public static final String PARAM_USERNAME = "username";
     public static final String PARAM_USER_ID = "user_id";
     public static final String PARAM_TAGS = "tags";
+    public static final String PARAM_URL = "url";
+    public static final String PARAM_TYPE = "type";
+    public static final String PARAM_DEPENDENCY = "dependency";
+    public static final String PARAM_LINK_ID = "link_id";
 
     public static final String STATUS_ACTIVE = "1";
     public static final String STATUS_INACTIVE = "0";

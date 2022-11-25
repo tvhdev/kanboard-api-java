@@ -13,6 +13,7 @@ public class KanboardUtilTask extends KanboardUtil<KanboardTask> {
             return null;
         }
         Map<String, Object> h = new HashMap<>();
+        h.put(PARAM_ID, task.getId());
         h.put(PARAM_TITLE, task.getTitle());
         h.put(PARAM_PROJECT_ID, task.getProjectId());
         h.put(PARAM_DESCRIPTION, task.getDescription());

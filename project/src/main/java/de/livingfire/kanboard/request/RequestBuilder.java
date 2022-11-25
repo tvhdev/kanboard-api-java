@@ -71,6 +71,7 @@ public abstract class RequestBuilder implements KanboardConstant {
         PARAMS_ALLOWED_TASK_UPDATE.add(PARAM_OWNER_ID);
         PARAMS_ALLOWED_TASK_UPDATE.add(PARAM_DATE_DUE);
         PARAMS_ALLOWED_TASK_UPDATE.add(PARAM_DESCRIPTION);
+        PARAMS_ALLOWED_TASK_UPDATE.add(PARAM_TITLE);
         PARAMS_ALLOWED_TASK_UPDATE.add(PARAM_CATEGORY_ID);
         PARAMS_ALLOWED_TASK_UPDATE.add(PARAM_SCORE);
         PARAMS_ALLOWED_TASK_UPDATE.add(PARAM_PRIORITY);
@@ -112,6 +113,17 @@ public abstract class RequestBuilder implements KanboardConstant {
         PARAMS_ALLOWED_TASK_MOVE_POSITION.add(PARAM_SWIMLANE_ID);
     }
 
+    protected static final ArrayList<String> PARAMS_ALLOWED_EXTERNAL_TASK_LINK_CREATE;
+    static {
+    	PARAMS_ALLOWED_EXTERNAL_TASK_LINK_CREATE = new ArrayList<>();
+    	PARAMS_ALLOWED_EXTERNAL_TASK_LINK_CREATE.add(PARAM_TASK_ID);
+    	PARAMS_ALLOWED_EXTERNAL_TASK_LINK_CREATE.add(PARAM_URL);
+    	PARAMS_ALLOWED_EXTERNAL_TASK_LINK_CREATE.add(PARAM_DEPENDENCY);
+    	PARAMS_ALLOWED_EXTERNAL_TASK_LINK_CREATE.add(PARAM_TYPE);
+    	PARAMS_ALLOWED_EXTERNAL_TASK_LINK_CREATE.add(PARAM_TITLE);
+    	PARAMS_ALLOWED_EXTERNAL_TASK_LINK_CREATE.add(PARAM_LINK_ID);
+    }
+    
     protected void addParams(KanboardRequest request,
                              Map<String, Object> params,
                              ArrayList<String> paramsAllowed) {
