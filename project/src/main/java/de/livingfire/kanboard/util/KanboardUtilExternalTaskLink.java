@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import de.livingfire.kanboard.domain.KanboardExternalTaskLink;
-import de.livingfire.kanboard.domain.KanboardTask;
 
 public class KanboardUtilExternalTaskLink extends KanboardUtil<KanboardExternalTaskLink> {
 

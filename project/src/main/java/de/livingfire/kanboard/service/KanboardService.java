@@ -1,8 +1,6 @@
 package de.livingfire.kanboard.service;
 
 import de.livingfire.kanboard.configuration.KanboardApi;
-import de.livingfire.kanboard.domain.KanboardExternalTaskLink;
-import de.livingfire.kanboard.domain.KanboardProject;
 import de.livingfire.kanboard.service.impl.KanboardServiceActionDefault;
 import de.livingfire.kanboard.service.impl.KanboardServiceApplicationDefault;
 import de.livingfire.kanboard.service.impl.KanboardServiceColumnDefault;
