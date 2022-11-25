@@ -70,7 +70,7 @@ public class KanboardUtilTask extends KanboardUtil<KanboardTask> {
         task.setRecurrenceBaseDate(String.valueOf(h.get(PARAM_RECURRENCE_BASEDATE)));
         task.setRecurrenceParent(String.valueOf(h.get(PARAM_RECURRENCE_PARENT)));
         task.setRecurrenceChild(String.valueOf(h.get(PARAM_RECURRENCE_CHILD)));
-        task.setTags(h.get(PARAM_TAGS)!=null?((String)h.get(PARAM_TAGS)).split(","):null);
+//        task.setTags((String[])h.get(PARAM_TAGS)); wird nicht ausgelesen, dazu muss getTaskTags verwendet werden!
         task.setPriority(String.valueOf(h.get(PARAM_PRIORITY)));
         return task;
     }
