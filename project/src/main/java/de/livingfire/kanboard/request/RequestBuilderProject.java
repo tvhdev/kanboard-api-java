@@ -20,15 +20,15 @@ public class RequestBuilderProject extends RequestBuilder {
         return request;
     }
 
-    public KanboardRequest projectCreate(Map<String, String> params) {
+    public KanboardRequest projectCreate(Map<String, Object> params) {
         KanboardRequest request = new KanboardRequest(METHOD_PROJECT_CREATE);
         addParams(request, params, PARAMS_ALLOWED_PROJECT_CREATE);
         return request;
     }
 
     public KanboardRequest projectCreate(String projectName,
-                                         Map<String, String> paramsOptional) {
-        Map<String, String> params = paramsOptional;
+                                         Map<String, Object> paramsOptional) {
+        Map<String, Object> params = paramsOptional;
         if (params == null) {
             params = new HashMap<>();
         }
@@ -59,7 +59,7 @@ public class RequestBuilderProject extends RequestBuilder {
         return request;
     }
 
-    public KanboardRequest projectUpdate(Map<String, String> params) {
+    public KanboardRequest projectUpdate(Map<String, Object> params) {
         KanboardRequest request = new KanboardRequest(METHOD_PROJECT_UPDATE);
         addParams(request, params, PARAMS_ALLOWED_PROJECT_UPDATE);
         return request;

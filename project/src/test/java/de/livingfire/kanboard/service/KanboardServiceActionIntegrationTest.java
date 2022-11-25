@@ -45,7 +45,7 @@ public class KanboardServiceActionIntegrationTest implements KanboardConstant, I
     @Test
     public void testObjectAvailableActions() throws Exception {
 
-        Map<String, String> actions = this.service.action()
+        Map<String, Object> actions = this.service.action()
                                                   .availableActions();
         assertThat(actions.containsKey("\\Kanboard\\Action\\TaskAssignColorCategory"), is(true));
         assertThat(actions.containsKey("\\Kanboard\\Action\\TaskMoveColumnClosed"), is(true));
@@ -53,7 +53,7 @@ public class KanboardServiceActionIntegrationTest implements KanboardConstant, I
 
     @Test
     public void testObjectAvailableActionEvents() throws Exception {
-        Map<String, String> actions = this.service.action()
+        Map<String, Object> actions = this.service.action()
                                                   .availableActionEvents();
         assertThat(actions.containsKey("task.close"), is(true));
         assertThat(actions.containsKey("task.create"), is(true));
@@ -61,7 +61,7 @@ public class KanboardServiceActionIntegrationTest implements KanboardConstant, I
 
     @Test
     public void testObjectGetAvailableActionEventsString() throws Exception {
-        Map<String, String> actions = this.service.action()
+        Map<String, Object> actions = this.service.action()
                                                   .availableActionEvents("\\Kanboard\\Action\\TaskMoveColumnClosed");
         assertThat(actions, is(not(nullValue())));
         assertThat(actions.get("task.close"), equalTo("Closing a task"));

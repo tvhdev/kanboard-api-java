@@ -8,11 +8,11 @@ import de.livingfire.kanboard.domain.KanboardProject;
 public class KanboardUtilProject extends KanboardUtil<KanboardProject> {
 
     @Override
-    public Map<String, String> convertToMap(KanboardProject project) {
+    public Map<String, Object> convertToMap(KanboardProject project) {
         if (project == null) {
             return null;
         }
-        Map<String, String> h = new HashMap<>();
+        Map<String, Object> h = new HashMap<>();
         h.put(PARAM_ID, project.getId());
         h.put(PARAM_NAME, project.getName());
         h.put(PARAM_DESCRIPTION, project.getDescription());
@@ -23,16 +23,16 @@ public class KanboardUtilProject extends KanboardUtil<KanboardProject> {
     }
 
     @Override
-    public KanboardProject convertToObject(Map<String, String> h) {
+    public KanboardProject convertToObject(Map<String, Object> h) {
         if (h == null) {
             return null;
         }
         KanboardProject project = new KanboardProject();
         project.setId(String.valueOf(h.get(PARAM_ID)));
-        project.setName(h.get(PARAM_NAME));
-        project.setDescription(h.get(PARAM_DESCRIPTION));
+        project.setName((String)h.get(PARAM_NAME));
+        project.setDescription((String)h.get(PARAM_DESCRIPTION));
         project.setIsActive(String.valueOf(h.get(PARAM_IS_ACTIVE)));
-        project.setIdentifier(h.get(PARAM_IDENTIFIER));
+        project.setIdentifier((String)h.get(PARAM_IDENTIFIER));
         project.setOwnerId(String.valueOf(h.get(PARAM_OWNER_ID)));
         return project;
     }

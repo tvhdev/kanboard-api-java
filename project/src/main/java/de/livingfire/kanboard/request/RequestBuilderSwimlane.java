@@ -49,12 +49,12 @@ public class RequestBuilderSwimlane extends RequestBuilder {
         return swimlaneGetByName(projectId, DEFAULT_SWIMLANE_NAME);
     }
 
-    public KanboardRequest swimlaneUpdate(Map<String, String> params) {
+    public KanboardRequest swimlaneUpdate(Map<String, Object> params) {
         return swimlaneUpdate(
-                params.get(PARAM_PROJECT_ID),
-                    params.get(PARAM_SWIMLANE_ID),
-                    params.get(PARAM_NAME),
-                    params.get(PARAM_DESCRIPTION));
+                String.valueOf(params.get(PARAM_PROJECT_ID)),
+                String.valueOf(params.get(PARAM_SWIMLANE_ID)),
+                (String)params.get(PARAM_NAME),
+                (String)params.get(PARAM_DESCRIPTION));
     }
 
     public KanboardRequest swimlaneUpdate(String projectId,
@@ -105,7 +105,7 @@ public class RequestBuilderSwimlane extends RequestBuilder {
         return request;
     }
 
-    public KanboardRequest swimlaneChangePosition(Map<String, String> params) {
+    public KanboardRequest swimlaneChangePosition(Map<String, Object> params) {
         KanboardRequest request = new KanboardRequest(METHOD_SWIMLANE_CHANGE_POSITION);
         addParams(request, params, PARAMS_ALLOWED_SWIMLANE_CHANGE_POSITION);
         return request;

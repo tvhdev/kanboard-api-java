@@ -8,11 +8,11 @@ import de.livingfire.kanboard.domain.KanboardObject;
 
 public interface KanboardObjectConverter<T extends KanboardObject> {
 
-    public Map<String, String> convertToMap(T kanboardObject);
+    public Map<String, Object> convertToMap(T kanboardObject);
 
-    public T convertToObject(Map<String, String> h);
+    public T convertToObject(Map<String, Object> h);
 
-    default ArrayList<T> convertToObjectList(ArrayList<Map<String, String>> hashMapList) {
+    default ArrayList<T> convertToObjectList(ArrayList<Map<String, Object>> hashMapList) {
         if ((hashMapList == null) || hashMapList.isEmpty()) {
             return new ArrayList<>();
         }

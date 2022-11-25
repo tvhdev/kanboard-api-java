@@ -56,10 +56,10 @@ public class KanboardServiceSwimlaneDefault extends KanboardServiceSwimlaneNativ
     }
 
     @Override
-    public KanboardSwimlane update(Map<String, String> hashMap) {
+    public KanboardSwimlane update(Map<String, Object> hashMap) {
         hashMap.put(PARAM_SWIMLANE_ID, hashMap.get(PARAM_ID));
         swimlaneUpdate(hashMap).getResult();
-        return getById(hashMap.get(PARAM_ID));
+        return getById(String.valueOf(hashMap.get(PARAM_ID)));
     }
 
     @Override

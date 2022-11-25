@@ -41,7 +41,7 @@ public abstract class KanboardServiceUserNative extends RestServiceObjectDefault
         return this.util;
     }
 
-    public KanboardResponse<Map<String, String>> userGetById(String userId) {
+    public KanboardResponse<Map<String, Object>> userGetById(String userId) {
         KanboardRequest request = this.requestBuilder.userGetById(userId);
         return sendRequest(request);
     }
@@ -53,8 +53,8 @@ public abstract class KanboardServiceUserNative extends RestServiceObjectDefault
 
     public KanboardResponse<Integer> userCreate(String userName,
                                                 String password,
-                                                Map<String, String> paramsOptional) {
-        Map<String, String> params = paramsOptional;
+                                                Map<String, Object> paramsOptional) {
+        Map<String, Object> params = paramsOptional;
         if (params == null) {
             params = new HashMap<>();
         }
@@ -63,19 +63,19 @@ public abstract class KanboardServiceUserNative extends RestServiceObjectDefault
         return userCreate(params);
     }
 
-    public KanboardResponse<Integer> userCreate(Map<String, String> params) {
+    public KanboardResponse<Integer> userCreate(Map<String, Object> params) {
         KanboardRequest request = this.requestBuilder.userCreate(params);
         return sendRequestWithFalseCheck(request);
     }
 
-    public KanboardResponse<Map<String, String>> userByUsername(String userName) {
+    public KanboardResponse<Map<String, Object>> userByUsername(String userName) {
         KanboardRequest request = this.requestBuilder.userByUsername(userName);
         return sendRequest(request);
     }
 
     public void userUpdate(String userId,
-                           Map<String, String> paramsOptional) {
-        Map<String, String> params = paramsOptional;
+                           Map<String, Object> paramsOptional) {
+        Map<String, Object> params = paramsOptional;
         if (params == null) {
             params = new HashMap<>();
         }
@@ -83,7 +83,7 @@ public abstract class KanboardServiceUserNative extends RestServiceObjectDefault
         userUpdate(params);
     }
 
-    public void userUpdate(Map<String, String> params) {
+    public void userUpdate(Map<String, Object> params) {
         KanboardRequest request = this.requestBuilder.userUpdate(params);
         sendRequestWithFalseCheck(request);
     }

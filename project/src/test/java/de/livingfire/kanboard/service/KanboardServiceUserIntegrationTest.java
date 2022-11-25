@@ -92,10 +92,10 @@ public class KanboardServiceUserIntegrationTest implements KanboardConstant, Int
         KanboardUser userReloaded = this.service.user()
                                                 .enshure(userTemplate);
 
-        Map<String, String> mapCreated = this.service.user()
+        Map<String, Object> mapCreated = this.service.user()
                                                      .getUtil()
                                                      .convertToMap(userCreated);
-        Map<String, String> mapReloaded = this.service.user()
+        Map<String, Object> mapReloaded = this.service.user()
                                                       .getUtil()
                                                       .convertToMap(userReloaded);
 

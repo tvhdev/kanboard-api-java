@@ -178,10 +178,10 @@ public class KanboardServiceTaskIntegrationTest implements KanboardConstant, Int
         assertThat(taskReloaded.getId(), is(not(nullValue())));
         assertThat(taskReloaded.getObjectName(), equalTo(titleExpected));
 
-        Map<String, String> mapCreated = this.service.task()
+        Map<String, Object> mapCreated = this.service.task()
                                                      .getUtil()
                                                      .convertToMap(taskCreated);
-        Map<String, String> mapReloaded = this.service.task()
+        Map<String, Object> mapReloaded = this.service.task()
                                                       .getUtil()
                                                       .convertToMap(taskReloaded);
 

@@ -21,13 +21,13 @@ public class RequestBuilderUser extends RequestBuilder {
         return request;
     }
 
-    public KanboardRequest userCreate(Map<String, String> params) {
+    public KanboardRequest userCreate(Map<String, Object> params) {
         KanboardRequest request = new KanboardRequest(METHOD_USER_CREATE);
         addParams(request, params, PARAMS_ALLOWED_USER_CREATE);
         return request;
     }
 
-    public KanboardRequest userUpdate(Map<String, String> params) {
+    public KanboardRequest userUpdate(Map<String, Object> params) {
         KanboardRequest request = new KanboardRequest(METHOD_USER_UPDATE);
         addParams(request, params, PARAMS_ALLOWED_USER_UPDATE);
         return request;

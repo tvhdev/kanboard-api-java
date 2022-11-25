@@ -80,7 +80,7 @@ public class KanboardServiceColumnDefault extends KanboardServiceColumnNative {
 
     @Override
     public KanboardColumn getById(String columnId) {
-        Map<String, String> map = columnGetById(columnId).getResult();
+        Map<String, Object> map = columnGetById(columnId).getResult();
         return getUtil().convertToObject(map);
     }
 
@@ -90,9 +90,9 @@ public class KanboardServiceColumnDefault extends KanboardServiceColumnNative {
     }
 
     @Override
-    public KanboardColumn update(Map<String, String> map) {
+    public KanboardColumn update(Map<String, Object> map) {
         columnUpdate(map).getResult();
-        return getById(map.get(PARAM_ID));
+        return getById(String.valueOf(map.get(PARAM_ID)));
     }
 
 }

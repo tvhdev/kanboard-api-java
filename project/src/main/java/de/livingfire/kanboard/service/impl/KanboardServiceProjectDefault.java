@@ -34,9 +34,9 @@ public class KanboardServiceProjectDefault extends KanboardServiceProjectNative 
     }
 
     @Override
-    public KanboardProject update(Map<String, String> hashMap) {
+    public KanboardProject update(Map<String, Object> hashMap) {
         projectUpdate(hashMap).getResult();
-        return getById(hashMap.get(PARAM_ID));
+        return getById(String.valueOf(hashMap.get(PARAM_ID)));
     }
 
     @Override

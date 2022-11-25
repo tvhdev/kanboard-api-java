@@ -12,7 +12,7 @@ public class KanboardServiceUserDefault extends KanboardServiceUserNative {
 
     @Override
     public KanboardUser getByObjectName(KanboardUser kanboardObject) {
-        Map<String, String> resultMap = userByUsername(kanboardObject.getUsername()).getResult();
+        Map<String, Object> resultMap = userByUsername(kanboardObject.getUsername()).getResult();
         return getUtil().convertToObject(resultMap);
     }
 
@@ -28,9 +28,9 @@ public class KanboardServiceUserDefault extends KanboardServiceUserNative {
     }
 
     @Override
-    public KanboardUser update(Map<String, String> map) {
+    public KanboardUser update(Map<String, Object> map) {
         userUpdate(map);
-        return getById(map.get(PARAM_ID));
+        return getById(String.valueOf(map.get(PARAM_ID)));
     }
 
 }

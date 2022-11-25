@@ -45,7 +45,7 @@ public class KanboardServiceTaskDefault extends KanboardServiceTaskNative {
 
     @Override
     public KanboardTask create(KanboardTask task) {
-        Map<String, String> paramsOptional = getUtil().convertToMap(task);
+        Map<String, Object> paramsOptional = getUtil().convertToMap(task);
         Integer taskId = taskCreate(task.getTitle(), task.getProjectId(), paramsOptional).getResult();
         return getById(taskId);
     }
@@ -92,8 +92,8 @@ public class KanboardServiceTaskDefault extends KanboardServiceTaskNative {
     }
 
     @Override
-    public KanboardTask update(Map<String, String> hashMap) {
-        String taskId = hashMap.get(PARAM_ID);
+    public KanboardTask update(Map<String, Object> hashMap) {
+        String taskId = String.valueOf(hashMap.get(PARAM_ID));
         taskUpdate(taskId, hashMap);
         return getById(taskId);
     }
@@ -190,7 +190,7 @@ public class KanboardServiceTaskDefault extends KanboardServiceTaskNative {
                               String columnId,
                               String position,
                               String swimlaneId) {
-        Map<String, String> paramsOptional = new HashMap<>();
+        Map<String, Object> paramsOptional = new HashMap<>();
         paramsOptional.put(PARAM_SWIMLANE_ID, swimlaneId);
         taskMovePosition(projectId, taskId, columnId, position, paramsOptional);
     }

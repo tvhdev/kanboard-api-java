@@ -21,15 +21,15 @@ public abstract class RestServiceObjectDefault<KANBOARD_OBJECT extends KanboardO
             return create(kanboardObjectEnshure);
         }
 
-        Map<String, String> hashmapEnshure = getUtil().convertToMap(kanboardObjectEnshure);
-        Map<String, String> hashmapLoaded = getUtil().convertToMap(kanboardLoaded);
+        Map<String, Object> hashmapEnshure = getUtil().convertToMap(kanboardObjectEnshure);
+        Map<String, Object> hashmapLoaded = getUtil().convertToMap(kanboardLoaded);
 
         List<Boolean> differencesList = hashmapEnshure.keySet()
                                                       .stream()
                                                       .filter(k -> enshureParams().contains(k))
                                                       .map(k -> {
-                                                          String expected = hashmapEnshure.get(k);
-                                                          String actual = hashmapLoaded.get(k);
+                                                    	  Object expected = hashmapEnshure.get(k);
+                                                    	  Object actual = hashmapLoaded.get(k);
                                                           if (expected == null) {
                                                               return false;
                                                           }

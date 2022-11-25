@@ -102,9 +102,9 @@ public interface KanboardConstant {
     public static final String PARAM_TIME_ESTIMATED = "time_estimated";
     public static final String PARAM_TIME_SPEND = "time_spent";
     public static final String PARAM_TITLE = "title";
-    public static final String PARAM_URL = "url";
     public static final String PARAM_USERNAME = "username";
     public static final String PARAM_USER_ID = "user_id";
+    public static final String PARAM_TAGS = "tags";
 
     public static final String STATUS_ACTIVE = "1";
     public static final String STATUS_INACTIVE = "0";

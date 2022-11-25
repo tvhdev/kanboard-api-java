@@ -14,10 +14,10 @@ public interface KanboardServiceAction extends RestService {
 
     List<KanboardAction> getAll(String projectId);
 
-    Map<String, String> availableActionEvents(String actionName);
+    Map<String, Object> availableActionEvents(String actionName);
 
-    Map<String, String> availableActionEvents();
+    Map<String, Object> availableActionEvents();
 
-    Map<String, String> availableActions();
+    Map<String, Object> availableActions();
 
 }

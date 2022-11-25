@@ -43,12 +43,12 @@ public abstract class KanboardServiceProjectNative extends RestServiceObjectDefa
         return this.util;
     }
 
-    public KanboardResponse<List<HashMap<String, String>>> projectGetAll() {
+    public KanboardResponse<List<HashMap<String, Object>>> projectGetAll() {
         String json = this.requestBuilder.projectGetAll();
         return sendRequestWithFalseCheck(json);
     }
 
-    public KanboardResponse<Boolean> projectUpdate(Map<String, String> params) {
+    public KanboardResponse<Boolean> projectUpdate(Map<String, Object> params) {
         KanboardRequest request = this.requestBuilder.projectUpdate(params);
         return sendRequestWithFalseCheck(request);
     }
@@ -64,7 +64,7 @@ public abstract class KanboardServiceProjectNative extends RestServiceObjectDefa
                                                    String description,
                                                    String ownerId,
                                                    String identifer) {
-        Map<String, String> params = new HashMap<>();
+        Map<String, Object> params = new HashMap<>();
         params.put(PARAM_PROJECT_ID, projectId);
         params.put(PARAM_NAME, name);
         params.put(PARAM_DESCRIPTION, description);
@@ -73,18 +73,18 @@ public abstract class KanboardServiceProjectNative extends RestServiceObjectDefa
         return projectUpdate(params);
     }
 
-    public KanboardResponse<Map<String, String>> projectGetById(String projectId) {
+    public KanboardResponse<Map<String, Object>> projectGetById(String projectId) {
         KanboardRequest request = this.requestBuilder.projectById(projectId);
         return sendRequest(request);
     }
 
     public KanboardResponse<Integer> projectCreate(String projectName,
-                                                   Map<String, String> paramsOptional) {
+                                                   Map<String, Object> paramsOptional) {
         KanboardRequest request = this.requestBuilder.projectCreate(projectName, paramsOptional);
         return sendRequestWithFalseCheck(request);
     }
 
-    public KanboardResponse<Map<String, String>> projectByName(String projectName) {
+    public KanboardResponse<Map<String, Object>> projectByName(String projectName) {
         KanboardRequest request = this.requestBuilder.projectByName(projectName);
         return sendRequest(request);
     }

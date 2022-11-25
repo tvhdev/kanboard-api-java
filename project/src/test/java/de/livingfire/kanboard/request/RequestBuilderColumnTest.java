@@ -103,7 +103,7 @@ public class RequestBuilderColumnTest implements KanboardConstant {
     public void testColumnUpdate() throws Exception {
         String columnIdExpected = "42";
         String titleExpected = "my title";
-        Map<String, String> paramsOptional = new HashMap<>();
+        Map<String, Object> paramsOptional = new HashMap<>();
         paramsOptional.put(PARAM_TASK_LIMIT, "5");
         paramsOptional.put(PARAM_DESCRIPTION, "my description");
 

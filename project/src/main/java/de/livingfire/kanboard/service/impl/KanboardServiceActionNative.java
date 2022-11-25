@@ -36,17 +36,17 @@ public abstract class KanboardServiceActionNative extends RestServiceDefault imp
         return sendRequestWithFalseCheck(request);
     }
 
-    protected KanboardResponse<Map<String, String>> actionAvailableActionEvents(String actionName) {
+    protected KanboardResponse<Map<String, Object>> actionAvailableActionEvents(String actionName) {
         KanboardRequest request = this.requestBuilder.actionAvailableActionEvents(actionName);
         return sendRequestWithFalseCheck(request);
     }
 
-    protected KanboardResponse<Map<String, String>> actionAvailableActionEvents() {
+    protected KanboardResponse<Map<String, Object>> actionAvailableActionEvents() {
         KanboardRequest request = this.requestBuilder.actionAvailableActionEvents();
         return sendRequestWithFalseCheck(request);
     }
 
-    protected KanboardResponse<Map<String, String>> actionAvailableActions() {
+    protected KanboardResponse<Map<String, Object>> actionAvailableActions() {
         KanboardRequest request = this.requestBuilder.actionAvailableActions();
         return sendRequestWithFalseCheck(request);
     }

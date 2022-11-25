@@ -34,9 +34,9 @@ public class KanboardTask implements KanboardObject {
     private String timeEstimated;
     private String timeSpent;
     private String title;
-    private String url;
+    private String[] tags;
 
-    public KanboardTask() {
+	public KanboardTask() {
         super();
     }
 
@@ -76,8 +76,8 @@ public class KanboardTask implements KanboardObject {
                 + this.recurrenceParent + ", recurrenceStatus=" + this.recurrenceStatus + ", recurrenceTimeFrame="
                 + this.recurrenceTimeFrame + ", recurrenceTrigger=" + this.recurrenceTrigger + ", reference="
                 + this.reference + ", score=" + this.score + ", swimlaneId=" + this.swimlaneId + ", timeEstimated="
-                + this.timeEstimated + ", timeSpent=" + this.timeSpent + ", title=" + this.title + ", url=" + this.url
-                + "]";
+                + this.timeEstimated + ", timeSpent=" + this.timeSpent + ", title=" + this.title
+                + "tags=" + this.tags + "]";
     }
 
     public String getRecurrenceChild() {
@@ -94,14 +94,6 @@ public class KanboardTask implements KanboardObject {
 
     public void setRecurrenceParent(String recurrenceParent) {
         this.recurrenceParent = recurrenceParent;
-    }
-
-    public String getUrl() {
-        return this.url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
     }
 
     public String getDateStarted() {
@@ -329,5 +321,13 @@ public class KanboardTask implements KanboardObject {
     public void setRecurrenceBaseDate(String recurrenceBaseDate) {
         this.recurrenceBaseDate = recurrenceBaseDate;
     }
+
+    public String[] getTags() {
+		return tags;
+	}
+
+	public void setTags(String[] tags) {
+		this.tags = tags;
+	}
 
 }

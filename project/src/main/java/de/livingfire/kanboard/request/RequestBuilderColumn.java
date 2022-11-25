@@ -61,7 +61,7 @@ public class RequestBuilderColumn extends RequestBuilder {
         return request;
     }
 
-    public KanboardRequest columnUpdate(Map<String, String> params) {
+    public KanboardRequest columnUpdate(Map<String, Object> params) {
         KanboardRequest request = new KanboardRequest(METHOD_COLUMN_UPDATE);
 
         addParams(request, params, PARAMS_ALLOWED_COLUMN_UPDATE);
@@ -70,8 +70,8 @@ public class RequestBuilderColumn extends RequestBuilder {
 
     public KanboardRequest columnUpdate(String columnId,
                                         String title,
-                                        Map<String, String> paramsOptional) {
-        Map<String, String> params = paramsOptional;
+                                        Map<String, Object> paramsOptional) {
+        Map<String, Object> params = paramsOptional;
         if (params == null) {
             params = new HashMap<>();
         }

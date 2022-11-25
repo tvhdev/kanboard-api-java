@@ -74,8 +74,8 @@ public class KanboardSetupIntegrationTest implements KanboardConstant {
                                              if (templateAction.getParams()
                                                                .keySet()
                                                                .contains(PARAM_COLUMN_ID)) {
-                                                 String columnName = templateAction.getParams()
-                                                                                   .get(PARAM_COLUMN_ID);
+                                                 String columnName = String.valueOf(templateAction.getParams()
+                                                                                   .get(PARAM_COLUMN_ID));
                                                  KanboardColumn column = new KanboardColumn();
                                                  column.setObjectName(columnName);
                                                  column.setProjectId(project.getId());

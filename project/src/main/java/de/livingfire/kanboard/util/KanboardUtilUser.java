@@ -8,11 +8,11 @@ import de.livingfire.kanboard.domain.KanboardUser;
 public class KanboardUtilUser extends KanboardUtil<KanboardUser> {
 
     @Override
-    public Map<String, String> convertToMap(KanboardUser user) {
+    public Map<String, Object> convertToMap(KanboardUser user) {
         if (user == null) {
             return null;
         }
-        Map<String, String> h = new HashMap<>();
+        Map<String, Object> h = new HashMap<>();
         h.put(PARAM_ID, user.getId());
         h.put(PARAM_USERNAME, user.getUsername());
         h.put(PARAM_PASSWORD, user.getPassword());
@@ -27,21 +27,21 @@ public class KanboardUtilUser extends KanboardUtil<KanboardUser> {
     }
 
     @Override
-    public KanboardUser convertToObject(Map<String, String> h) {
+    public KanboardUser convertToObject(Map<String, Object> h) {
         if (h == null) {
             return null;
         }
         KanboardUser user = new KanboardUser();
-        user.setId(h.get(PARAM_ID));
-        user.setUsername(h.get(PARAM_USERNAME));
-        user.setPassword(h.get(PARAM_PASSWORD));
-        user.setRole(h.get(PARAM_ROLE));
-        user.setIsLdapUser(h.get(PARAM_IS_LDAP_USER));
-        user.setName(h.get(PARAM_NAME));
-        user.setEmail(h.get(PARAM_EMAIL));
-        user.setGoogleId(h.get(PARAM_GOOGLE_ID));
-        user.setGithubId(h.get(PARAM_GITHUB_ID));
-        user.setNotificationEnabled(h.get(PARAM_NOTIFICATIONS_ENABLED));
+        user.setId((String)h.get(PARAM_ID));
+        user.setUsername((String)h.get(PARAM_USERNAME));
+        user.setPassword((String)h.get(PARAM_PASSWORD));
+        user.setRole((String)h.get(PARAM_ROLE));
+        user.setIsLdapUser((String)h.get(PARAM_IS_LDAP_USER));
+        user.setName((String)h.get(PARAM_NAME));
+        user.setEmail((String)h.get(PARAM_EMAIL));
+        user.setGoogleId((String)h.get(PARAM_GOOGLE_ID));
+        user.setGithubId((String)h.get(PARAM_GITHUB_ID));
+        user.setNotificationEnabled((String)h.get(PARAM_NOTIFICATIONS_ENABLED));
         return user;
     }
 

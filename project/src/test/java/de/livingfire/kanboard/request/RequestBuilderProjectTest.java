@@ -41,7 +41,7 @@ public class RequestBuilderProjectTest implements KanboardConstant {
     @Test
     public void testProjectCreate() throws Exception {
         String projectNameExpected = "projectName";
-        Map<String, String> paramsOptional = new HashMap<>();
+        Map<String, Object> paramsOptional = new HashMap<>();
         paramsOptional.put(PARAM_DESCRIPTION, "description");
 
         KanboardRequest request = this.requestBuilder.projectCreate(projectNameExpected, paramsOptional);
@@ -79,7 +79,7 @@ public class RequestBuilderProjectTest implements KanboardConstant {
 
     @Test
     public void testProjectUpdate() throws Exception {
-        Map<String, String> params = new HashMap<>();
+        Map<String, Object> params = new HashMap<>();
         params.put(PARAM_PROJECT_ID, "1");
         params.put(PARAM_NAME, "my name");
         params.put(PARAM_DESCRIPTION, "my description");

@@ -51,7 +51,7 @@ public class RequestBuilderUserTest implements KanboardConstant {
 
     @Test
     public void testUserCreate() throws Exception {
-        Map<String, String> params = new HashMap<>();
+        Map<String, Object> params = new HashMap<>();
         params.put(PARAM_USERNAME, "user");
         params.put(PARAM_PASSWORD, "password");
         params.put(PARAM_ROLE, ROLE_APP_ADMIN);
@@ -67,7 +67,7 @@ public class RequestBuilderUserTest implements KanboardConstant {
     @Test
     public void testUserUpdate() throws Exception {
 
-        Map<String, String> params = new HashMap<>();
+        Map<String, Object> params = new HashMap<>();
         params.put(PARAM_USERNAME, "skylar");
         params.put(PARAM_ROLE, ROLE_APP_MANAGER);
 

@@ -10,7 +10,7 @@ public interface RestServiceObject<KANBOARD_OBJECT extends KanboardObject> exten
 
     KANBOARD_OBJECT update(KANBOARD_OBJECT kanboardObject);
 
-    KANBOARD_OBJECT update(Map<String, String> map);
+    KANBOARD_OBJECT update(Map<String, Object> map);
 
     KANBOARD_OBJECT create(KANBOARD_OBJECT kanboardObject);
 

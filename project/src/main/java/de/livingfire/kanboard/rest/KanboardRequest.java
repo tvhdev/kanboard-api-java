@@ -7,7 +7,7 @@ public class KanboardRequest {
     private String jsonrpc;
     private String method;
     private String id;
-    private LinkedHashMap<String, String> params;
+    private LinkedHashMap<String, Object> params;
 
     public KanboardRequest() {
         super();
@@ -49,11 +49,11 @@ public class KanboardRequest {
         this.id = id;
     }
 
-    public LinkedHashMap<String, String> getParams() {
+    public LinkedHashMap<String, Object> getParams() {
         return this.params;
     }
 
-    public void setParams(LinkedHashMap<String, String> params) {
+    public void setParams(LinkedHashMap<String, Object> params) {
         this.params = params;
     }
 

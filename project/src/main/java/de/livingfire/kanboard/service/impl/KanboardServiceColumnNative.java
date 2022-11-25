@@ -40,19 +40,19 @@ public abstract class KanboardServiceColumnNative extends RestServiceObjectDefau
         return this.util;
     }
 
-    public KanboardResponse<Boolean> columnUpdate(Map<String, String> params) {
+    public KanboardResponse<Boolean> columnUpdate(Map<String, Object> params) {
         KanboardRequest request = this.requestBuilder.columnUpdate(params);
         return sendRequestWithFalseCheck(request);
     }
 
     public KanboardResponse<Boolean> columnUpdate(String columnId,
                                                   String title,
-                                                  Map<String, String> optinalParams) {
+                                                  Map<String, Object> optinalParams) {
         KanboardRequest request = this.requestBuilder.columnUpdate(columnId, title, optinalParams);
         return sendRequestWithFalseCheck(request);
     }
 
-    public KanboardResponse<Map<String, String>> columnGetById(String columnId) {
+    public KanboardResponse<Map<String, Object>> columnGetById(String columnId) {
         KanboardRequest request = this.requestBuilder.columnGetById(columnId);
         return sendRequest(request);
     }
@@ -77,7 +77,7 @@ public abstract class KanboardServiceColumnNative extends RestServiceObjectDefau
         return sendRequestWithFalseCheck(request);
     }
 
-    public KanboardResponse<ArrayList<Map<String, String>>> columnGetAll(String projectId) {
+    public KanboardResponse<ArrayList<Map<String, Object>>> columnGetAll(String projectId) {
         KanboardRequest request = this.requestBuilder.columnGet(projectId);
         return sendRequest(request);
     }

@@ -74,6 +74,7 @@ public abstract class RequestBuilder implements KanboardConstant {
         PARAMS_ALLOWED_TASK_UPDATE.add(PARAM_CATEGORY_ID);
         PARAMS_ALLOWED_TASK_UPDATE.add(PARAM_SCORE);
         PARAMS_ALLOWED_TASK_UPDATE.add(PARAM_PRIORITY);
+        PARAMS_ALLOWED_TASK_UPDATE.add(PARAM_TAGS);
         PARAMS_ALLOWED_TASK_UPDATE.add(PARAM_RECURRENCE_STATUS);
         PARAMS_ALLOWED_TASK_UPDATE.add(PARAM_RECURRENCE_TRIGGER);
         PARAMS_ALLOWED_TASK_UPDATE.add(PARAM_RECURRENCE_FACTOR);
@@ -94,6 +95,7 @@ public abstract class RequestBuilder implements KanboardConstant {
         PARAMS_ALLOWED_TASK_CREATE.add(PARAM_SCORE);
         PARAMS_ALLOWED_TASK_CREATE.add(PARAM_SWIMLANE_ID);
         PARAMS_ALLOWED_TASK_CREATE.add(PARAM_PRIORITY);
+        PARAMS_ALLOWED_TASK_CREATE.add(PARAM_TAGS);
         PARAMS_ALLOWED_TASK_CREATE.add(PARAM_RECURRENCE_STATUS);
         PARAMS_ALLOWED_TASK_CREATE.add(PARAM_RECURRENCE_TRIGGER);
         PARAMS_ALLOWED_TASK_CREATE.add(PARAM_RECURRENCE_FACTOR);
@@ -111,12 +113,10 @@ public abstract class RequestBuilder implements KanboardConstant {
     }
 
     protected void addParams(KanboardRequest request,
-                             Map<String, String> params,
+                             Map<String, Object> params,
                              ArrayList<String> paramsAllowed) {
         paramsAllowed.stream()
                      .filter(p -> params.get(p) != null)
-                     .filter(p -> !params.get(p)
-                                         .isEmpty())
                      .forEach(p -> request.getParams()
                                           .put(p, params.get(p)));
     }

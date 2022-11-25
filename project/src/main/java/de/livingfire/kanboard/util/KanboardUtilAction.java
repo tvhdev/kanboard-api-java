@@ -22,7 +22,7 @@ public class KanboardUtilAction implements KanboardConstant {
         action.setProjectId(String.valueOf(h.get(PARAM_PROJECT_ID)));
         action.setEventName(String.valueOf(h.get(PARAM_EVENT_NAME)));
         action.setActionName(String.valueOf(h.get(PARAM_ACTION_NAME)));
-        action.setParams((LinkedHashMap<String, String>) h.get(PARAM_PARAMS));
+        action.setParams((LinkedHashMap<String, Object>) h.get(PARAM_PARAMS));
         return action;
     }
 

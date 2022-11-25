@@ -8,7 +8,7 @@ public class RequestBuilderTask extends RequestBuilder {
 
     public KanboardRequest taskCreate(String title,
                                       String projectId,
-                                      Map<String, String> paramsOptional) {
+                                      Map<String, Object> paramsOptional) {
         KanboardRequest request = new KanboardRequest(METHOD_TASK_CREATE);
 
         request.getParams()
@@ -38,7 +38,7 @@ public class RequestBuilderTask extends RequestBuilder {
     }
 
     public KanboardRequest taskUpdate(String taskId,
-                                      Map<String, String> paramsOptional) {
+                                      Map<String, Object> paramsOptional) {
         KanboardRequest request = new KanboardRequest(METHOD_TASK_UPDATE);
 
         request.getParams()
@@ -51,7 +51,7 @@ public class RequestBuilderTask extends RequestBuilder {
                                             String taskId,
                                             String columnId,
                                             String position,
-                                            Map<String, String> paramsOptional) {
+                                            Map<String, Object> paramsOptional) {
         KanboardRequest request = new KanboardRequest(METHOD_TASK_MOVE_POSITION);
         request.getParams()
                .put(PARAM_PROJECT_ID, projectId);

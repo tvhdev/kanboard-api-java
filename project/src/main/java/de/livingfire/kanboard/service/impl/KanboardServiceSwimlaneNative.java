@@ -47,7 +47,7 @@ public abstract class KanboardServiceSwimlaneNative extends RestServiceObjectDef
     public void swimlaneChangePosition(String projectId,
                                        String swimlaneId,
                                        String position) {
-        Map<String, String> params = new HashMap<>();
+        Map<String, Object> params = new HashMap<>();
         params.put(PARAM_PROJECT_ID, projectId);
         params.put(PARAM_SWIMLANE_ID, swimlaneId);
         params.put(PARAM_POSITION, position);
@@ -73,7 +73,7 @@ public abstract class KanboardServiceSwimlaneNative extends RestServiceObjectDef
         sendRequestWithFalseCheck(request);
     }
 
-    protected KanboardResponse<Boolean> swimlaneUpdate(Map<String, String> params) {
+    protected KanboardResponse<Boolean> swimlaneUpdate(Map<String, Object> params) {
         KanboardRequest request = this.requestBuilder.swimlaneUpdate(params);
         return sendRequestWithFalseCheck(request);
     }
@@ -90,12 +90,12 @@ public abstract class KanboardServiceSwimlaneNative extends RestServiceObjectDef
         sendRequestWithFalseCheck(request);
     }
 
-    public KanboardResponse<Map<String, String>> swimlaneGetDefault(String projectId) {
+    public KanboardResponse<Map<String, Object>> swimlaneGetDefault(String projectId) {
         KanboardRequest request = this.requestBuilder.swimlaneGetDefault(projectId);
         return sendRequest(request);
     }
 
-    public KanboardResponse<Map<String, String>> swimlaneGetByName(String projectId,
+    public KanboardResponse<Map<String, Object>> swimlaneGetByName(String projectId,
                                                                    String swimlaneName) {
         KanboardRequest request = this.requestBuilder.swimlaneGetByName(projectId, swimlaneName);
         return sendRequest(request);
@@ -108,12 +108,12 @@ public abstract class KanboardServiceSwimlaneNative extends RestServiceObjectDef
         return sendRequestWithFalseCheck(request);
     }
 
-    public KanboardResponse<Map<String, String>> swimlaneGetById(String swimlaneId) {
+    public KanboardResponse<Map<String, Object>> swimlaneGetById(String swimlaneId) {
         KanboardRequest request = this.requestBuilder.swimlaneGetById(swimlaneId);
         return sendRequest(request);
     }
 
-    public KanboardResponse<ArrayList<Map<String, String>>> swimlaneGetAll(String projectId) {
+    public KanboardResponse<ArrayList<Map<String, Object>>> swimlaneGetAll(String projectId) {
         KanboardRequest request = this.requestBuilder.swimlaneGetAll(projectId);
         return sendRequest(request);
     }

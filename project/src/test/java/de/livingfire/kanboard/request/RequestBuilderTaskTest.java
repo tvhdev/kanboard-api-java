@@ -34,7 +34,7 @@ public class RequestBuilderTaskTest implements KanboardConstant {
         String categoryIdExpected = "1";
         String colorIdExpected = "blue";
 
-        Map<String, String> paramsOptional = new HashMap<>();
+        Map<String, Object> paramsOptional = new HashMap<>();
         paramsOptional.put(PARAM_CATEGORY_ID, categoryIdExpected);
         paramsOptional.put(PARAM_COLOR_ID, colorIdExpected);
 
@@ -76,7 +76,7 @@ public class RequestBuilderTaskTest implements KanboardConstant {
         String categoryIdExpected = "1";
         String colorIdExpected = "blue";
 
-        Map<String, String> paramsOptional = new HashMap<>();
+        Map<String, Object> paramsOptional = new HashMap<>();
         paramsOptional.put(PARAM_CATEGORY_ID, categoryIdExpected);
         paramsOptional.put(PARAM_COLOR_ID, colorIdExpected);
         paramsOptional.put(PARAM_TITLE, titleExpected);
@@ -97,7 +97,7 @@ public class RequestBuilderTaskTest implements KanboardConstant {
         String positionExpected = "5";
         String swimlaneIdExpected = "1";
 
-        Map<String, String> paramsOptional = new HashMap<>();
+        Map<String, Object> paramsOptional = new HashMap<>();
         paramsOptional.put(PARAM_SWIMLANE_ID, swimlaneIdExpected);
 
         KanboardRequest request = this.requestBuilder.taskMovePosition(

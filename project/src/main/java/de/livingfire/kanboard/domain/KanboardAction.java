@@ -24,7 +24,7 @@ public class KanboardAction implements KanboardObject, KanboardConstant {
     @JsonProperty(PARAM_ACTION_NAME)
     private String actionName;
 
-    private LinkedHashMap<String, String> params;
+    private LinkedHashMap<String, Object> params;
 
     public KanboardAction() {
         super();
@@ -51,8 +51,8 @@ public class KanboardAction implements KanboardObject, KanboardConstant {
         return getParams().keySet()
                           .stream()
                           .map(k -> {
-                              String attributeThis = getParams().get(k);
-                              String attributeOther = getParams().get(k);
+                              Object attributeThis = getParams().get(k);
+                              Object attributeOther = getParams().get(k);
                               if (!attributeThis.equals(attributeOther)) {
                                   return false;
                               }
@@ -114,11 +114,11 @@ public class KanboardAction implements KanboardObject, KanboardConstant {
         this.actionName = actionName;
     }
 
-    public LinkedHashMap<String, String> getParams() {
+    public LinkedHashMap<String, Object> getParams() {
         return this.params;
     }
 
-    public void setParams(LinkedHashMap<String, String> params) {
+    public void setParams(LinkedHashMap<String, Object> params) {
         this.params = params;
     }
 

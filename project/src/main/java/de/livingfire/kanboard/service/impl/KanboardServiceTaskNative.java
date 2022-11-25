@@ -46,33 +46,33 @@ public abstract class KanboardServiceTaskNative extends RestServiceObjectDefault
     }
 
     public void taskUpdate(String taskId,
-                           Map<String, String> paramsOptional) {
+                           Map<String, Object> paramsOptional) {
         KanboardRequest request = this.requestBuilder.taskUpdate(taskId, paramsOptional);
         sendRequestWithFalseCheck(request);
     }
 
     public KanboardResponse<Integer> taskCreate(String title,
                                                 String projectId,
-                                                Map<String, String> paramsOptional) {
+                                                Map<String, Object> paramsOptional) {
         KanboardRequest request = this.requestBuilder.taskCreate(title, projectId, paramsOptional);
         return sendRequestWithFalseCheck(request);
     }
 
-    public KanboardResponse<ArrayList<Map<String, String>>> taskGetActive(String projectId) {
+    public KanboardResponse<ArrayList<Map<String, Object>>> taskGetActive(String projectId) {
         return taskGetAll(projectId, STATUS_ACTIVE);
     }
 
-    public KanboardResponse<ArrayList<Map<String, String>>> taskGetInactive(String projectId) {
+    public KanboardResponse<ArrayList<Map<String, Object>>> taskGetInactive(String projectId) {
         return taskGetAll(projectId, STATUS_INACTIVE);
     }
 
-    public KanboardResponse<ArrayList<Map<String, String>>> taskGetAll(String projectId,
+    public KanboardResponse<ArrayList<Map<String, Object>>> taskGetAll(String projectId,
                                                                        String statusId) {
         KanboardRequest request = this.requestBuilder.taskGetAll(projectId, statusId);
         return sendRequestWithFalseCheck(request);
     }
 
-    public KanboardResponse<Map<String, String>> taskById(String taskId) {
+    public KanboardResponse<Map<String, Object>> taskById(String taskId) {
         KanboardRequest request = this.requestBuilder.taskById(taskId);
         return sendRequest(request);
     }
@@ -81,7 +81,7 @@ public abstract class KanboardServiceTaskNative extends RestServiceObjectDefault
                                                       String taskId,
                                                       String columnId,
                                                       String position,
-                                                      Map<String, String> paramsOptional) {
+                                                      Map<String, Object> paramsOptional) {
         KanboardRequest request = this.requestBuilder.taskMovePosition(
                 projectId,
                     taskId,

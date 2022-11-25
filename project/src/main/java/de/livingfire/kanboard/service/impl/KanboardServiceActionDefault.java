@@ -12,17 +12,17 @@ public class KanboardServiceActionDefault extends KanboardServiceActionNative {
     }
 
     @Override
-    public Map<String, String> availableActions() {
+    public Map<String, Object> availableActions() {
         return actionAvailableActions().getResult();
     }
 
     @Override
-    public Map<String, String> availableActionEvents() {
+    public Map<String, Object> availableActionEvents() {
         return actionAvailableActionEvents().getResult();
     }
 
     @Override
-    public Map<String, String> availableActionEvents(String actionName) {
+    public Map<String, Object> availableActionEvents(String actionName) {
         return actionAvailableActionEvents(actionName).getResult();
     }
 

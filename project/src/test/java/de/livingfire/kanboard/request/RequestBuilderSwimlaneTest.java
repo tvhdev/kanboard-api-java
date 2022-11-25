@@ -127,7 +127,7 @@ public class RequestBuilderSwimlaneTest implements KanboardConstant {
         String swimlaneIdExpected = "2";
         String positionExpected = "3";
 
-        Map<String, String> params = new HashMap<>();
+        Map<String, Object> params = new HashMap<>();
         params.put(PARAM_PROJECT_ID, projectIdExpected);
         params.put(PARAM_SWIMLANE_ID, swimlaneIdExpected);
         params.put(PARAM_POSITION, positionExpected);
