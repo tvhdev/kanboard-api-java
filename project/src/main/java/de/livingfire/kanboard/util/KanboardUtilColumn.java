@@ -13,13 +13,13 @@ public class KanboardUtilColumn extends KanboardUtil<KanboardColumn> {
             return null;
         }
         KanboardColumn column = new KanboardColumn();
-        column.setId(h.get(PARAM_ID));
-        column.setProjectId(h.get(PARAM_PROJECT_ID));
+        column.setId(String.valueOf(h.get(PARAM_ID)));
+        column.setProjectId(String.valueOf(h.get(PARAM_PROJECT_ID)));
         column.setTitle(h.get(PARAM_TITLE));
-        column.setPosition(h.get(PARAM_POSITION));
-        column.setTaskLimit(h.get(PARAM_TASK_LIMIT));
+        column.setPosition(String.valueOf(h.get(PARAM_POSITION)));
+        column.setTaskLimit(String.valueOf(h.get(PARAM_TASK_LIMIT)));
         column.setDescription(h.get(PARAM_DESCRIPTION));
-        column.setHideInDashboard(h.get(PARAM_HIDE_IN_DASHBOARD));
+        column.setHideInDashboard(String.valueOf(h.get(PARAM_HIDE_IN_DASHBOARD)));
         return column;
     }
 

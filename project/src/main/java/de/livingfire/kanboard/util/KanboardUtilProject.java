@@ -28,12 +28,12 @@ public class KanboardUtilProject extends KanboardUtil<KanboardProject> {
             return null;
         }
         KanboardProject project = new KanboardProject();
-        project.setId(h.get(PARAM_ID));
+        project.setId(String.valueOf(h.get(PARAM_ID)));
         project.setName(h.get(PARAM_NAME));
         project.setDescription(h.get(PARAM_DESCRIPTION));
-        project.setIsActive(h.get(PARAM_IS_ACTIVE));
+        project.setIsActive(String.valueOf(h.get(PARAM_IS_ACTIVE)));
         project.setIdentifier(h.get(PARAM_IDENTIFIER));
-        project.setOwnerId(h.get(PARAM_OWNER_ID));
+        project.setOwnerId(String.valueOf(h.get(PARAM_OWNER_ID)));
         return project;
     }
 
