@@ -37,6 +37,8 @@ public interface KanboardConstant {
     public static final String METHOD_SWIMLANE_REMOVE = "removeSwimlane";
     public static final String METHOD_SWIMLANE_UPDATE = "updateSwimlane";
     public static final String METHOD_TASK_BY_ID = "getTask";
+    public static final String METHOD_GET_TASK_TAGS = "getTaskTags";
+    public static final String METHOD_SET_TASK_TAGS = "setTaskTags";
     public static final String METHOD_TASK_CREATE = "createTask";
     public static final String METHOD_TASK_GET_ALL = "getAllTasks";
     public static final String METHOD_TASK_MOVE_POSITION = "moveTaskPosition";

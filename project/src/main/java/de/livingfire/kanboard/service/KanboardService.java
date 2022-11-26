@@ -8,6 +8,7 @@ import de.livingfire.kanboard.service.impl.KanboardServiceExternalTaskLinkDefaul
 import de.livingfire.kanboard.service.impl.KanboardServiceProjectDefault;
 import de.livingfire.kanboard.service.impl.KanboardServiceSwimlaneDefault;
 import de.livingfire.kanboard.service.impl.KanboardServiceTaskDefault;
+import de.livingfire.kanboard.service.impl.KanboardServiceTaskTagsDefault;
 import de.livingfire.kanboard.service.impl.KanboardServiceUserDefault;
 import de.livingfire.kanboard.util.KanboardUtilDate;
 
@@ -20,6 +21,7 @@ public class KanboardService {
     private KanboardServiceTask serviceTask;
     private KanboardServiceUser serviceUser;
     private KanboardServiceExternalTaskLink serviceExternalTaskLink;
+    private KanboardServiceTaskTagsDefault serviceTaskTags;
     private KanboardServiceApplication serviceApplication;
     private KanboardUtilDate utilDate;
 
@@ -33,6 +35,7 @@ public class KanboardService {
         this.serviceTask = new KanboardServiceTaskDefault();
         this.serviceUser = new KanboardServiceUserDefault();
         this.serviceExternalTaskLink = new KanboardServiceExternalTaskLinkDefault();
+        this.serviceTaskTags = new KanboardServiceTaskTagsDefault();
     }
 
 	public void setApi(KanboardApi kanboardApi) {
@@ -43,6 +46,7 @@ public class KanboardService {
         this.serviceTask.setKanboardApi(kanboardApi);
         this.serviceUser.setKanboardApi(kanboardApi);
         this.serviceExternalTaskLink.setKanboardApi(kanboardApi);
+        this.serviceTaskTags.setKanboardApi(kanboardApi);
         this.serviceApplication.setKanboardApi(kanboardApi);
 
         // hand down for lasy loading KanboardUtilDate
@@ -87,7 +91,11 @@ public class KanboardService {
 		return getServiceExternalTaskLink();
 	}
 
-    public KanboardUtilDate date() {
+	public KanboardServiceTaskTags taskTags() {
+		return getServiceTaskTags();
+	}
+
+	public KanboardUtilDate date() {
         if (this.utilDate == null) {
             this.utilDate = this.serviceApplication.getUtilDate();
         }
@@ -108,6 +116,10 @@ public class KanboardService {
 
 	public KanboardServiceExternalTaskLink getServiceExternalTaskLink() {
 		return serviceExternalTaskLink;
+	}
+
+    private KanboardServiceTaskTags getServiceTaskTags() {
+		return this.serviceTaskTags;
 	}
 
 	public void setServiceExternalTaskLink(KanboardServiceExternalTaskLink serviceExternalTaskLink) {
