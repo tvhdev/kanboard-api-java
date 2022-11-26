@@ -3,6 +3,7 @@
 Improved Java client for the [Kanboard](https://kanboard.net/) Json-RPC [API](https://kanboard.net/documentation/api-json-rpc) for the current version of Kanboard 1.25.X supporting:
 * Task (now with tags, during createTask)
 * ExternalTaskLink (createExternalTaskLink implemented)
+* TaskTags (update and getByTaskId)
 * ...
 
 ## Usage
