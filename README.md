@@ -6,6 +6,8 @@ Improved Java client for the [Kanboard](https://kanboard.net/) Json-RPC [API](ht
 * TaskTags (update and getByTaskId)
 * ...
 
+Thanks to @phoen1x for the initial work!
+
 ## Usage
 
 [See project page](https://phoen1x.github.io/kanboard-api-java)
